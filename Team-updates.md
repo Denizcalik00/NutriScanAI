@@ -16,5 +16,5 @@
 6. I checked every image by one by for an hour, and I selected the best approx 500 images for each.
 7. I retrained the model with transfer learning (MobileNetV2 96x96 0.35 (final layer: 16 neurons, 0.1 dropout)
 8. the result is **95% accuracy for validation set and %93 percent for test set**
-   ![Confusion Matrix](images/Confusion_matrix(3_classes.png)
-10. Next step is adding more classes with selected good image data.
+   ![Confusion Matrix](images/Confusion_matrix_3_classes.png)
+9. Next step is adding more classes with selected good image data.
