@@ -22,3 +22,6 @@
      ![Sample 1](images/app_sample1.png)
      ![Sample 2](images/app_sample2.png)
      ![Sample 3](images/app_sample3.png)
+
+    
+11. **I also added video file that I recorded my working sample for this 3 classes with nutrition display added on the screen**
