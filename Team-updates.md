@@ -18,3 +18,7 @@
 8. the result is **95% accuracy for validation set and %93 percent for test set**
    ![Confusion Matrix](images/Confusion_matrix_3_classes.png)
 9. Next step is adding more classes with selected good image data.
+10. I run the model and get it run on our edge device OpenMV Cam RT1062 These are the result images
+     ![Sample 1](images/app_sample1.png)
+     ![Sample 2](images/app_sample2.png)
+     ![Sample 3](images/app_sample3.png)
