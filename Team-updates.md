@@ -8,7 +8,7 @@
 4. I created readme file and sumurize the project in there with team member names including
 
 ### Deniz Calik 21/04/2026
-1. To start with a simple step, I searched and dowloaded 3 classes of food; Fries, Burger, Pizza
+1. To start with a simple step, I searched and dowloaded data images of 3 classes of food; Fries, Burger, Pizza
 2. Approximately I had 1500 images for each.
 3. in first attempt, I get 80% accuracy from transfer learning and 70% accuracy from a new trained model.
 4. After trying different attemps and analysing the results I found the main problem.
