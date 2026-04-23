@@ -25,3 +25,7 @@
 
     
 11. **I also added video file that I recorded my working sample for this 3 classes with nutrition display added on the screen**
+    
+### Deniz Calik 23/04/2026
+1. I collect around 500 images of banana by one by for an hour. because I could not find a single source that has useful banana images
+2. I got 95% training accuracy, 95% test accuracy
