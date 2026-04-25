@@ -33,4 +33,7 @@
 1. I have selected and collected broccoli images around 500, by checking each to make sure they are good data for our system and camera
 2. I have got 97% test accuracy for float32 unoptimized,
 3. and 92% test accuracy int8 optimized
-4. ![Confusion Matrix 5 classes](five-classes.png)
+4. ![Confusion Matrix 5 classes](images/five-classes.png)
+### Deniz Calik 24/04/2026
+1. I run EON tuner to find best fit model for trsnsfer learning on Edge Impulse.
+2. it turned out that mobilenetv1-38f is the best model that gives 95% accuracy for both val. and test accuracy which is very good.
