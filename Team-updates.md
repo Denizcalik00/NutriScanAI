@@ -37,3 +37,6 @@
 ### Deniz Calik 24/04/2026
 1. I run EON tuner to find best fit model for trsnsfer learning on Edge Impulse.
 2. it turned out that mobilenetv1-38f is the best model that gives 95% accuracy for both val. and test accuracy which is very good.
+### Deniz Calik 26/04/2026
+1. I run EON tuner to find best fit model for trsnsfer learning on Edge Impulse again and got 3% accuracy improvment.
+![Confusion Matrix 5 classes](images/five-classes2.png)
