@@ -1,11 +1,26 @@
 # Team updates
-
+### Bhagyalakshmy 16/04/2026
+1. I had initally created a model with food items on edge impulse , the real testing followed thorugh during the lab . Following food items were selected - Pizza, Hamburger, Chicken curry, beet salad , caesar salad, french fries, omelette
+2. Although the model was performing poorly at 46% and then slowly rose to 70%
+3. We realized that food items such as lasagna and chicken curry looked very similar especially Pizza was a food item which looked similar to most of the other food items.
+4. Since the salad looked green which was similar in many pizzas, in totality the food classification was not performing very well in both RGB as well as greyscale conevrted
+5. I started removing some food classifications to help in the model accuracy and thus we found that it rose to 70%
+   
 ### Deniz Calik 16/04/2026
 1. I created a github project repo and invited teammates 
-2. I found an idea on the lab section and discuss with Brendan : 
+2. The team found an idea on the lab section and discuss with Brendan : 
    (The OpenMV identifies the food in real time, and then a connected display system uses that detected class to look up and show nutrition information beside the live image.)
 3. I searched some existing image data sets such as https://www.kaggle.com/datasets/trolukovich/food11-image-dataset?select=evaluation
 4. I created readme file and sumurize the project in there with team member names including
+
+###
+16.04.2026-26.04.2026
+Ritika Mukerjee
+1. After discussions with the team and the Luke we had finalized with the topic of real time food detection such that it would track the nutritional value as well for estimate. The goal of the project was to help identify the healthy food type and the unhealthy food type although the classifications are between different food types.
+2. I had downloaded food items dataset from food-101 for 4 classes -Banana,donut,Beet Salad and french fries ( around 800 items) . After Bhaagya's baseline model I had found that further food items were causing more issues thus I decided on these 4 food items parallely Deniz was preparing his own model, he had also performed the websocket process. Although since the main purpose of the model was to classify between healthy and unhealthy food items not by simple classificaiton but by fetch nutritional value the classifications could improve as we can cover more food items 
+3. I trained the model with a mix of different images - such as some taken from the phone as well as the internet. Different lighting and backgrounds.
+4. The accuracy came to be 91%.
+5. It was an upgrade from before but the gap was in calculating the nutritional value using web socket. 
 
 ### Deniz Calik 21/04/2026
 1. To start with a simple step, I searched and dowloaded data images of 3 classes of food; Fries, Burger, Pizza
