@@ -6,36 +6,38 @@
 
 import sensor, time, ml, uos, gc
 
-sensor.reset()                         # Reset and initialize the sensor.
-sensor.set_pixformat(sensor.RGB565)    # Set pixel format to RGB565 (or GRAYSCALE)
-sensor.set_framesize(sensor.QVGA)      # Set frame size to QVGA (320x240)
-sensor.set_windowing((240, 240))       # Set 240x240 window.
-sensor.skip_frames(time=2000)          # Let the camera adjust.
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.set_windowing((240, 240))
+sensor.skip_frames(time=2000)
 
-net = None
-labels = None
+net = ml.Model("trained.tflite",
+               load_to_fb=uos.stat('trained.tflite')[6] > (gc.mem_free() - (64*1024)))
 
-try:
-    # load the model, alloc the model file on the heap if we have at least 64K free after loading
-    net = ml.Model("trained.tflite", load_to_fb=uos.stat('trained.tflite')[6] > (gc.mem_free() - (64*1024)))
-except Exception as e:
-    print(e)
-    raise Exception('Failed to load "trained.tflite", did you copy the .tflite and labels.txt file onto the mass-storage device? (' + str(e) + ')')
-
-try:
-    labels = [line.rstrip('\n') for line in open("labels.txt")]
-except Exception as e:
-    raise Exception('Failed to load "labels.txt", did you copy the .tflite and labels.txt file onto the mass-storage device? (' + str(e) + ')')
+labels = [line.rstrip('\n') for line in open("labels.txt")]
 
 clock = time.clock()
-while(True):
+
+CONFIDENCE_THRESHOLD = 0.70
+
+while True:
     clock.tick()
 
     img = sensor.snapshot()
 
-    predictions_list = list(zip(labels, net.predict([img])[0].flatten().tolist()))
+    outputs = net.predict([img])[0].flatten().tolist()
+    predictions = list(zip(labels, outputs))
 
-    for i in range(len(predictions_list)):
-        print("%s = %f" % (predictions_list[i][0], predictions_list[i][1]))
+    best_label = max(predictions, key=lambda x: x[1])
 
-    print(clock.fps(), "fps")
+    if best_label[1] > CONFIDENCE_THRESHOLD:
+        text = "%s %.2f" % (best_label[0], best_label[1])
+    else:
+        text = "No confident result"
+
+    print(text)
+
+    img.draw_string(10, 10, text, color=(255, 0, 0), scale=2)
+
+    print("FPS:", clock.fps())
