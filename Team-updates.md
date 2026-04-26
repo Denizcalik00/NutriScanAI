@@ -20,7 +20,8 @@ Ritika Mukerjee
 2. I had downloaded food items dataset from food-101 for 4 classes -Banana,donut,Beet Salad and french fries ( around 800 items) . After Bhaagya's baseline model I had found that further food items were causing more issues thus I decided on these 4 food items parallely Deniz was preparing his own model, he had also performed the websocket process. Although since the main purpose of the model was to classify between healthy and unhealthy food items not by simple classificaiton but by fetch nutritional value the classifications could improve as we can cover more food items 
 3. I trained the model with a mix of different images - such as some taken from the phone as well as the internet. Different lighting and backgrounds.
 4. The accuracy came to be 91%.
-5. It was an upgrade from before but the gap was in calculating the nutritional value using web socket. 
+5. It was an upgrade from before but the gap was in calculating the nutritional value using web socket.
+6. Collaborating with Deniz for further dataset expansion- 500 images of donut for his model.
 
 ### Deniz Calik 21/04/2026
 1. To start with a simple step, I searched and dowloaded data images of 3 classes of food; Fries, Burger, Pizza
