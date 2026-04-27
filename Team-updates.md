@@ -13,26 +13,23 @@
 3. I searched some existing image data sets such as https://www.kaggle.com/datasets/trolukovich/food11-image-dataset?select=evaluation
 4. I created readme file and sumurize the project in there with team member names including
 
-###
+### Ritika Mukerjee
 16.04.2026-26.04.2026
-Ritika Mukerjee
 1. After discussions with the team and the Luke we had finalized with the topic of real time food detection such that it would track the nutritional value as well for estimate. The goal of the project was to help identify the healthy food type and the unhealthy food type although the classifications are between different food types.
-2. I had downloaded food items dataset from food-101 for 4 classes -Banana,donut,Beet Salad and french fries ( around 800 items) . After Bhaagya's baseline model I had found that further food items were causing more issues thus I decided on these 4 food items parallely Deniz was preparing his own model, he had also performed the websocket process. Although since the main purpose of the model was to classify between healthy and unhealthy food items not by simple classificaiton but by fetch nutritional value the classifications could improve as we can cover more food items 
+2. I had downloaded food items dataset from food-101 for 4 classes -Banana,donut,Beet Salad and french fries ( around 800 items) . After Bhaagya's baseline model I had found that further food items were causing more issues thus I decided on these 4 food items parallely Deniz was preparing his own model. Although since the main purpose of the model was to classify between healthy and unhealthy food items not by simple classificaiton but by fetch nutritional value the classifications could improve as we can cover more food items 
 3. I trained the model with a mix of different images - such as some taken from the phone as well as the internet. Different lighting and backgrounds.
 4. The training accuracy came to be 91% whereas the testing accuracy was around 89%
 5. It was an upgrade from before but the gap was in calculating the nutritional value using web socket.
 6. Collaborating with Deniz for further dataset expansion- 500 images of donut for his model.
 7. The final classification will be in compilation of all the best classified food items, which help boost the accuracy 
 
-###
+### Venu
 16.04.2026-26.04.2026
-Venu
 1. I helped in research regarding the websocket during the meeting on Monday
 2. I also helped in further assisting Deniz in his dataset collection.
 
-###
+### Hamza 
 16.04.2026-26.04.2026
-Hamza 
 1. I helped in collecting egg class dataset for enhancing performance for Deniz 
 
 ### Deniz Calik 21/04/2026
