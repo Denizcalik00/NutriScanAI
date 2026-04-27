@@ -14,7 +14,7 @@ sensor.set_windowing((240, 240))       # Use only a 240x240 window from the came
 sensor.skip_frames(time=2000)          # Wait 2 seconds so camera can adjust brightness/exposure.
 
 # <<< : Nutrition information for each food class.
-# These labels must match labels1.txt names.
+# These labels must match labels.txt names.
 nutrition = {
     "Fries": ["312 kcal", "3.4g protein", "41g carbs"],
     "Burger": ["295 kcal", "17g protein", "30g carbs"],
@@ -35,11 +35,11 @@ except Exception as e:
     raise Exception('Failed to load "trained.tflite", did you copy the .tflite and labels.txt file onto the mass-storage device? (' + str(e) + ')')
 
 try:
-    # Load class names from labels1.txt.
+    # Load class names from labels.txt.
     # Example: Fries, Burger, Pizza, Banana, Broccoli.
-    labels = [line.rstrip('\n') for line in open("labels1.txt")]
+    labels = [line.rstrip('\n') for line in open("labels.txt")]
 except Exception as e:
-    raise Exception('Failed to load "labels1.txt", did you copy the .tflite and labels1.txt file onto the mass-storage device? (' + str(e) + ')')  # <<< CHANGED: error message now says labels1.txt
+    raise Exception('Failed to load "labels.txt", did you copy the .tflite and labels.txt file onto the mass-storage device? (' + str(e) + ')')  # <<< CHANGED: error message now says labels.txt
 
 clock = time.clock()                   # Create clock object to measure FPS.
 
