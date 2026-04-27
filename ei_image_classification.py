@@ -1,5 +1,4 @@
 import sensor, time, ml, gc, uos
-import socket
 import json
 
 sensor.reset()
@@ -7,13 +6,6 @@ sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA)
 sensor.set_windowing((240, 240))
 sensor.skip_frames(time=2000)
-
-# Server config (your laptop IP)
-SERVER_IP = "192.168.1.5"
-SERVER_PORT = 8000
-
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect((SERVER_IP, SERVER_PORT))
 
 nutrition = {
     "Fries": ["312 kcal", "3.4g protein", "41g carbs"],
@@ -23,11 +15,15 @@ nutrition = {
     "Broccoli": ["55 kcal", "3.7g protein", "11g carbs"]
 }
 
-net = ml.Model("trained.tflite", load_to_fb=uos.stat('trained.tflite')[6] > (gc.mem_free() - (64*1024)))
+net = ml.Model(
+    "trained.tflite",
+    load_to_fb=uos.stat('trained.tflite')[6] > (gc.mem_free() - (64*1024))
+)
+
 labels = [line.strip() for line in open("labels.txt")]
 
-clock = time.clock()
 THRESHOLD = 0.80
+clock = time.clock()
 
 while True:
     clock.tick()
@@ -50,6 +46,7 @@ while True:
             "score": float(best_score)
         }
 
-    client.send((json.dumps(payload) + "\n").encode())
+    # IMPORTANT: send over USB serial (this is what Python reads)
+    print(json.dumps(payload))
 
     img.draw_string(10, 10, best_label, color=(255, 0, 0), scale=2)
