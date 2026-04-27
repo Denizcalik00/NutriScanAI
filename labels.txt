@@ -1,5 +1,22 @@
+### Model ver 1( Deniz)
 Banana
 Broccoli
 Burger
 Fries
 Pizza
+
+###Model ver 2(Ritika)
+Banana
+Donut
+Beet Salad
+French Fries
+
+###Model ver 3( Bhaagya)
+Pizza
+Beet Salad
+Caesar Salad
+Fries
+Omelette
+Lasagna
+Chicken Curry 
+
