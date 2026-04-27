@@ -1,5 +1,7 @@
+Apple
 Banana
 Broccoli
 Burger
+Donut
 Fries
 Pizza
