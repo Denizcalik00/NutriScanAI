@@ -47,4 +47,11 @@
 4. I checked the image quality for our model and gave feedback to each person, so they filtered their data according to that and sent it back to me
 5. But even that as we can see in the picture, we got overfitting for apple and egg. We did not get a good accuracy for donut because of bad images
 6. The others look fine, I will try the model on real data also add pictures that is taken from openmv cam for training to have better and realistic test accuracy
-7. ![Sample 4](images/final_sample.png)
+### Deniz Calik 28/04/2026
+1. We used grayscale with Ritika's recommandation and it actually gives us good acc, and worked well on the real image with our cam
+2. ![Sample 4](images/final_sample.png)
+### Deniz Calik 28/04/2026
+1. I implemented Websocket to pull nutrition info from a server instead of using hard code in our main.py file
+2. I created a server with python code and received predicted output from our openmv and send the nutri info to the client
+3. I used html file to monitor client output
+4. ![Sample 1](images/client_frontend.png)
