@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NutriScanAI</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #222;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 320px;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .predicted {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .low-confidence {
+            color: #c62828;
+        }
+
+        .nutrition p {
+            font-size: 18px;
+        }
+
+        .score-row {
+            margin: 12px 0;
+            text-align: left;
+        }
+
+        .score-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .bar-background {
+            background: #ddd;
+            border-radius: 8px;
+            height: 14px;
+            overflow: hidden;
+        }
+
+        .bar {
+            background: #4caf50;
+            height: 100%;
+            width: 0%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🍎 NutriScanAI</h1>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Predicted Food</h2>
+            <div id="predicted" class="predicted">Waiting...</div>
+            <p id="confidence"></p>
+
+            <div class="nutrition">
+                <p id="calories"></p>
+                <p id="protein"></p>
+                <p id="carbs"></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>All Prediction Scores</h2>
+            <div id="scores"></div>
+        </div>
+
+    </div>
+
+    <script>
+        const socket = new WebSocket("ws://localhost:8765");
+
+        socket.onopen = function() {
+            console.log("Connected to WebSocket server");
+        };
+
+        socket.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+
+            const predictedEl = document.getElementById("predicted");
+            const confidenceEl = document.getElementById("confidence");
+            const caloriesEl = document.getElementById("calories");
+            const proteinEl = document.getElementById("protein");
+            const carbsEl = document.getElementById("carbs");
+            const scoresEl = document.getElementById("scores");
+
+            if (data.error) {
+                predictedEl.innerText = "Error";
+                predictedEl.className = "predicted low-confidence";
+                confidenceEl.innerText = data.error;
+                return;
+            }
+
+            const confidencePercent = (data.confidence * 100).toFixed(1);
+
+            predictedEl.innerText = data.predicted;
+            confidenceEl.innerText = "Confidence: " + confidencePercent + "%";
+
+            if (data.predicted === "No confident prediction") {
+                predictedEl.className = "predicted low-confidence";
+                caloriesEl.innerText = "";
+                proteinEl.innerText = "";
+                carbsEl.innerText = "";
+            } else {
+                predictedEl.className = "predicted";
+
+                if (data.nutrition) {
+                    caloriesEl.innerText = "Calories: " + data.nutrition.calories + " kcal";
+                    proteinEl.innerText = "Protein: " + data.nutrition.protein + " g";
+                    carbsEl.innerText = "Carbs: " + data.nutrition.carbs + " g";
+                }
+            }
+
+            scoresEl.innerHTML = "";
+
+            for (const food in data.scores) {
+                const score = data.scores[food];
+                const percent = (score * 100).toFixed(1);
+
+                const row = document.createElement("div");
+                row.className = "score-row";
+
+                row.innerHTML = `
+                    <div class="score-label">
+                        <span>${food}</span>
+                        <span>${percent}%</span>
+                    </div>
+                    <div class="bar-background">
+                        <div class="bar" style="width: ${percent}%"></div>
+                    </div>
+                `;
+
+                scoresEl.appendChild(row);
+            }
+        };
+    </script>
+
+</body>
+</html>
