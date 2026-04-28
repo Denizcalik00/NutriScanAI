@@ -40,3 +40,11 @@
 ### Deniz Calik 26/04/2026
 1. I run EON tuner to find best fit model for trsnsfer learning on Edge Impulse again and got 3% accuracy improvment.
 ![Confusion Matrix 5 classes](images/five-classes2.png)
+### Deniz Calik 27/04/2026
+1. Today I got Donut images from **Ritika**
+2. Egg images from **Hamza**
+3. Apple images from **Venu**
+4. I checked the image quality for our model and gave feedback to each person, so they filtered their data according to that and sent it back to me
+5. But even that as we can see in the picture, we got overfitting for apple and egg. We did not get a good accuracy for donut because of bad images
+6. The others look fine, I will try the model on real data also add pictures that is taken from openmv cam for training to have better and realistic test accuracy
+7. ![Sample 4](images/final_sample.png)
