@@ -52,6 +52,6 @@
 2. ![Sample 4](images/final_sample.png)
 ### Deniz Calik 28/04/2026
 1. I implemented Websocket to pull nutrition info from a server instead of using hard code in our main.py file
-2. I created a server with python code and received predicted output from our openmv and send the nutri info to the client
+2. I created a server and client with python code and received predicted output from our openmv and send the nutri info to the client
 3. I used html file to monitor client output
 4. ![Sample 1](images/client_frontend.png)
