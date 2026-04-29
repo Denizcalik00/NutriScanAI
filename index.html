@@ -76,24 +76,32 @@
 
     <div class="container">
 
-        <div class="card">
-            <h2>Predicted Food</h2>
-            <div id="predicted" class="predicted">Waiting...</div>
-            <p id="confidence"></p>
-
-            <div class="nutrition">
-                <p id="calories"></p>
-                <p id="protein"></p>
-                <p id="carbs"></p>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>All Prediction Scores</h2>
-            <div id="scores"></div>
-        </div>
-
+    <!-- CAMERA -->
+    <div class="card">
+    	<h2>Live Camera</h2>
+    	<img src="http://172.20.10.4:8080/stream" width="300">
     </div>
+
+    <!-- PREDICTION + NUTRITION -->
+    <div class="card">
+        <h2>Predicted Food</h2>
+        <div id="predicted">Waiting...</div>
+        <p id="confidence"></p>
+
+        <div class="nutrition">
+            <p id="calories"></p>
+            <p id="protein"></p>
+            <p id="carbs"></p>
+        </div>
+    </div>
+
+    <!-- ALL SCORES -->
+    <div class="card">
+        <h2>All Prediction Scores</h2>
+        <div id="scores"></div>
+    </div>
+
+</div>
 
     <script>
         const socket = new WebSocket("ws://localhost:8765");
@@ -161,6 +169,7 @@
                 scoresEl.appendChild(row);
             }
         };
+
     </script>
 
 </body>
