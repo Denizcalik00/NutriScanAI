@@ -1,7 +1,6 @@
 🍎 NutriScanAI
 Real-Time Food Detection & Nutrition Display using OpenMV + TinyML
-
-
+![demo](images/final_demo.png)
 ________________________________________
 📌 Overview
 NutriScanAI is an embedded AI system that detects food items in real time using an OpenMV Cam RT1062 and displays estimated nutritional information through a live web interface.
