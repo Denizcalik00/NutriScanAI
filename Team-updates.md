@@ -11,7 +11,13 @@
 1. I collected a dataset for 8 different food items as Pizza, beet salad, caeser salad, chicken curry, french fries, hamburger ,lasagna, omelette
 2. Each class omelette had over 1000 images
 3. On training the model, I got an accuray of 45% which is really low. But to see if this works on open mv, I tested it in the lab and only Pizza had a overall good accuracy.
-4. I then deleted Omelette and Pizza from the dataset as salads and fries were being classified as Pizza. Following Luke's instruction, I converted the images to greyscale and the accuracy increased to 77%.
+4. The model used was MobileNetV2 with a 96×96 input and 0.35 width multiplier, with 16 neurons and 0.1 dropout in the final layer, trained over 30 epochs.
+
+### Bhagyalakshmy Saburaj 20/04/2026
+1. Following Luke's instruction, I then deleted Omelette and Pizza from the dataset as salads and fries were being classified as Pizza.
+2. I went through the dataset and cleaned them by removing the ones having multiple items in it.
+3. I updated the dataset with only 4 classes as Beet_salad, Lasagna, Fries and chicken curry.
+4. I converted the images to greyscale before training and the accuracy increased to 77%.
 5. The model used was MobileNetV2 with a 96×96 input and 0.35 width multiplier, with 16 neurons and 0.1 dropout in the final layer, trained over 30 epochs.
 
 ### Deniz Calik 21/04/2026
