@@ -1,0 +1,8 @@
+Pizza
+apple
+banana
+broccoli
+burger
+donut
+egg
+fries
