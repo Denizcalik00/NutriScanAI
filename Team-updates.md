@@ -7,6 +7,13 @@
 3. I searched some existing image data sets such as https://www.kaggle.com/datasets/trolukovich/food11-image-dataset?select=evaluation
 4. I created readme file and sumurize the project in there with team member names including
 
+### Bhagyalakshmy Saburaj 19/04/2026
+1. I collected a dataset for 8 different food items as Pizza, beet salad, caeser salad, chicken curry, french fries, hamburger ,lasagna, omelette
+2. Each class omelette had over 1000 images
+3. On training the model, I got an accuray of 45% which is really low. But to see if this works on open mv, I tested it in the lab and only Pizza had a overall good accuracy.
+4. I then deleted Omelette and Pizza from the dataset as salads and fries were being classified as Pizza. Following Luke's instruction, I converted the images to greyscale and the accuracy increased to 77%.
+5. The model used was MobileNetV2 with a 96×96 input and 0.35 width multiplier, with 16 neurons and 0.1 dropout in the final layer, trained over 30 epochs.
+
 ### Deniz Calik 21/04/2026
 1. To start with a simple step, I searched and dowloaded data images of 3 classes of food; Fries, Burger, Pizza
 2. Approximately I had 1500 images for each.
