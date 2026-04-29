@@ -1,13 +1,10 @@
 🍎 NutriScanAI
-
 Real-Time Food Detection & Nutrition Display using OpenMV + TinyML
-
 📌 Overview
 
 NutriScanAI is an embedded AI system that detects food items in real time using an OpenMV Cam RT1062 and displays estimated nutritional information through a live web interface.
 
 The system combines:
-
 Edge AI (TinyML) for on-device image classification
 Serial + WebSocket communication for data transfer
 Browser UI for visualization
@@ -57,9 +54,9 @@ WebSocket communication
 
 Upload the following files to OpenMV:
 
-main.py
-trained.tflite
-labels.txt
+main.py  
+trained.tflite  
+labels.txt  
 
 Then disconnect OpenMV IDE.
 
@@ -83,9 +80,6 @@ index.html
 in your browser.
 
 📷 Camera Streaming
-
-Two approaches were implemented:
-
 ✅ Recommended (Stable)
 OpenMV serves snapshot images via HTTP
 Browser refreshes image periodically
