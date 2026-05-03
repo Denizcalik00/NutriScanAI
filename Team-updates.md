@@ -23,6 +23,7 @@
 6. Collaborating with Deniz for further dataset expansion- 500 images of donut for his model.
 7. The final classification will be in compilation of all the best classified food items, which help boost the accuracy
 8. On 27th April, I and Deniz discussed over the Websocket and tried to get it working although it failed later on Deniz worked on it and it was successful
+9. On 1st May made some changes in the report 
 
 ### Venu
 16.04.2026-26.04.2026
@@ -31,7 +32,8 @@
 
 ### Hamza 
 16.04.2026-26.04.2026
-1. I helped in collecting egg class dataset for enhancing performance for Deniz 
+1. I helped in collecting egg class dataset for enhancing performance for Deniz
+2. Worked mostly on the report 
 
 ### Deniz Calik 21/04/2026
 1. To start with a simple step, I searched and dowloaded data images of 3 classes of food; Fries, Burger, Pizza
